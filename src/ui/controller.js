@@ -185,24 +185,4 @@ app.controller('Ctrl', ['$document', '$scope', '$timeout', 'cpu', 'memory', 'ass
             return '';
         }
     };
-
-    $scope.file_upload = function () {
-            try {
-
-            $scope.code = 'Test';
-
-            var files = evt.target.files; // FileList object
-
-                //Deklarierung eines Array Objekts mit Namen "output" Speicherung von Eigenschaften
-                var output = [];
-                //Zählschleife, bei jedem Durchgang den Namen, Typ und die Dateigröße der ausgewählten Dateien zum Array hinzufügen
-
-                  output.push('<li><strong>', f.name, '</strong> (', f.type || 'n/a', ') - ',
-                              f.size, ' bytes</li>');
-
-
-            } catch (e) {
-                $scope.error = e.error;
-            }
-        };
 }]);
