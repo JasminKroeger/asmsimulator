@@ -167,28 +167,28 @@
     <script src="angular.js"></script>
     <script src="asmsimulator.js"></script>
     <script>
-  window.onload = function() {
-    var asText = document.getElementById('files');
+      window.onload = function() {
+        var asText = document.getElementById('files');
 
-    asText.addEventListener('change', function(e) {
-        var file = files.files[0];
-        var textType = /text.*/;
+        asText.addEventListener('change', function(e) {
+            var file = files.files[0];
+            var textType = /text.*/;
 
-        if (file.type.match(textType)) {
-            var reader = new FileReader();
-           
+            if (file.type.match(textType)) {
+                var reader = new FileReader();
 
-            reader.onload = function(e) {
-                document.getElementById('sourceCode').value = reader.result;
+
+                reader.onload = function(e) {
+                    document.getElementById('sourceCode').value = reader.result;
+                }
+
+                reader.readAsText(file);
+            } else {
+                textbox.innerText = "Dateityp nicht unterstützt";
             }
-
-            reader.readAsText(file);
-        } else {
-            textbox.innerText = "Dateityp nicht unterstützt";
-        }
-    });
+        });
 }
-</script>
+    </script>
 
 </body>
 </html>
